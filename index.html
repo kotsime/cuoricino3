@@ -1,28 +1,56 @@
-<HTML>
-    <body>
-    <p><canvas id="lavagna" width="300" height="280">
-    Your browser does not support the HTML5 canvas tag.</canvas>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuore Animato</title>
+    <style>
+        body {
+            background-color: #FAF3E0; /* Bianco sporco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Altezza completa della finestra */
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border: 5px solid #8B0000; /* Cornice colore rosso scuro */
+            border-radius: 15px; /* Angoli arrotondati */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Ombra leggera */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <canvas id="lavagna" width="300" height="280"></canvas>
+    </div>
+
     <script>
-    const k=80;
-    var Ox,Oy;
-    var cx,cy;
-    var c=document.getElementById("lavagna");
-    Ox=0.5*c.width;
-    Oy=c.height/2-40;
-    var canvas=c.getContext("2d");
-    canvas.beginPath();
-    canvas.fillStyle="red"
-    canvas.strokeStyle="maroon"
-    for (i=-1.8;i<=1.8; i=i+0.001) {
-    cy=Math.sqrt(Math.cos(i))*Math.cos(300*i)+(Math.sqrt(Math.abs(i))-0.7)*Math.pow(4-i*i,1/100);
-    canvas.beginPath();
-    cx=(i)*k+Ox;
-    cy=Oy-k*cy;
-    canvas.arc(cx,cy,1,0,2*Math.PI);
-    canvas.stroke();
-    canvas.fill();
-    };
+        const k = 80;
+        var Ox, Oy;
+        var cx, cy;
+        var c = document.getElementById("lavagna");
+        Ox = c.width / 2; /* Centrato rispetto al canvas */
+        Oy = c.height / 2; /* Più centrato verticalmente */
+        var canvas = c.getContext("2d");
+
+        canvas.beginPath();
+        canvas.fillStyle = "red";
+        canvas.strokeStyle = "maroon";
+
+        for (let i = -1.8; i <= 1.8; i += 0.001) {
+            cy = Math.sqrt(Math.cos(i)) * Math.cos(300 * i) + (Math.sqrt(Math.abs(i)) - 0.7) * Math.pow(4 - i * i, 1 / 100);
+            canvas.beginPath();
+            cx = (i) * k + Ox;
+            cy = Oy - k * cy;
+            canvas.arc(cx, cy, 1, 0, 2 * Math.PI);
+            canvas.stroke();
+            canvas.fill();
+        }
     </script>
-    </body>
-    </HTML>
+</body>
+</html>
+
     
