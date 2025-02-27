@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuore Animato</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
         
         body {
             background-color: #FAF3E0; /* Bianco sporco */
@@ -14,7 +14,7 @@
             align-items: center;
             height: 100vh; /* Altezza completa della finestra */
             margin: 0;
-            font-family: 'Pacifico', cursive;
+            font-family: 'Roboto', sans-serif;
         }
         .container {
             background-color: white;
@@ -24,6 +24,10 @@
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Ombra leggera */
             text-align: center; /* Centrare il testo */
             animation: fadeIn 2s ease-in-out;
+        }
+        .box-container {
+            display: flex;
+            justify-content: space-around;
         }
         .box {
             display: inline-block;
@@ -55,9 +59,11 @@
 <body>
     <div class="container">
         <canvas id="lavagna" width="300" height="280"></canvas>
-        <div class="box"><p>Ti amo <3</p></div>
-        <div class="box"><p>Facciamo le cosacce? Jhonny li sotto sente la tua mancanza</p></div>
-        <div class="box"><p>Come direbbero a temptation island: Matteo ho un video per te, gradisci?</p></div>
+        <div class="box-container">
+            <div class="box"><p>Ti amo <3</p></div>
+            <div class="box"><p>Facciamo le cosacce? Jhonny li sotto sente la tua mancanza</p></div>
+            <div class="box"><p>Come direbbero a temptation island: Matteo ho un video per te, gradisci?</p></div>
+        </div>
     </div>
 
     <script>
